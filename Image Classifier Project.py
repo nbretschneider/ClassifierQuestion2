@@ -176,6 +176,8 @@ def train_model(model, criteria, optimizer, scheduler,
                                       num_epochs=25, device='cuda'):
     since = time.time()
 
+    model = model.to(device)
+
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
 
